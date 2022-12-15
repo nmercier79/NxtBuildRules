@@ -1,0 +1,21 @@
+---
+metadata:
+  id: "NXT_SRE_2"
+  name: "Probe timeout should be limited"
+  category: "KUBERNETES"
+  guideline: "https://confluence.intra.nexthink.com/display/NVG/k8s+probes"
+scope:
+  provider: kubernetes
+definition:
+  and:
+    - cond_type: "attribute"
+      resource_types:
+        - Deployment
+      attribute: "spec.template.spec.containers.*.livenessProbe.initialDelaySeconds"
+      operator: "exists"
+    - cond_type: "attribute"
+      resource_types:
+        - Deployment
+      attribute: "spec.template.spec.containers.*.resources.initialDelaySeconds"
+      operator: "lower_than_or_equal"
+      value: 8

@@ -1,0 +1,5 @@
+check:
+  - NXT*
+skip-check:
+  - NXT_KFK_1
+  - CKV_K8S_21

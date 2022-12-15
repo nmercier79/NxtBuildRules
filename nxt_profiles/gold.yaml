@@ -1,0 +1,10 @@
+check:
+  - NXT_ARC*
+  - NXT_SEC*
+  - NXT_SRE*
+  - NXT_QA*
+skip-check:
+  - CKV_K8S_21
+  - NXT_SEC_RULE17
+  - NXT_SRE_RULE11
+  - NXT_QA_RULE9

@@ -1,0 +1,15 @@
+---
+metadata:
+  id: "NXT_KFK_1"
+  name: "Kafka topics partions should be 3"
+  category: "KUBERNETES"
+  guideline: "https://confluence.intra.nexthink.com/display/SRECore/%5BSolution+design%5D+vpc-aware+kafka+topic+partitioning"
+scope:
+  provider: kubernetes
+definition:
+  cond_type: "attribute"
+  resource_types:
+    - NexthinkKafkaTopic
+  attribute: "spec.partitions"
+  operator: "equals"
+  value: "3"

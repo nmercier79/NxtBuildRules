@@ -1,0 +1,20 @@
+---
+metadata:
+  id: "NXT_SRE_1"
+  name: "Ephemeral storage request and limit should be set"
+  category: "KUBERNETES"
+  guideline: "https://confluence.intra.nexthink.com/display/NVG/k8s+ephemeral+storage"
+scope:
+  provider: kubernetes
+definition:
+  and:
+    - cond_type: "attribute"
+      resource_types:
+        - Deployment
+      attribute: "spec.template.spec.containers.*.resources.requests.ephemeral-storage"
+      operator: "exists"
+    - cond_type: "attribute"
+      resource_types:
+        - Deployment
+      attribute: "spec.template.spec.containers.*.resources.limits.ephemeral-storage"
+      operator: "exists"
